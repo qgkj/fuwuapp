@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<widget id="A6903574493062" version="0.0.1"> 
-  <name>tanchiguo</name>  
-  <description>服务到家</description>  
-  <author email="289373433@qq.com" href="http://www.apicloud.com">济南跃兴</author>  
+<widget id="A6932697876890" version="0.0.1"> 
+  <name>zhifu</name>  
+  <description/>  
+  <author email="1358933572@qq.com" href="http://www.apicloud.com">QG科技</author>  
   <content src="index.html"/>  
   <preference name="pageBounce" value="false"/>  
   <preference name="appBackground" value="rgba(0,0,0,0.0)"/>  
   <preference name="windowBackground" value="rgba(0,0,0,0.0)"/>  
   <preference name="frameBackgroundColor" value="rgba(0,0,0,0.0)"/>  
   <preference name="hScrollBarEnabled" value="true"/>  
-  <preference name="vScrollBarEnabled" value="false"/>  
+  <preference name="vScrollBarEnabled" value="true"/>  
   <preference name="autoLaunch" value="true"/>  
   <preference name="fullScreen" value="false"/>  
   <preference name="autoUpdate" value="true"/>  
   <preference name="smartUpdate" value="false"/>  
   <preference name="debug" value="true"/>  
-  <preference name="iOS7StatusBarAppearance" value="true"/>  
   <preference name="statusBarAppearance" value="true"/>  
-  <preference name="softInputMode" value="resize"/>  
-  <preference name="urlScheme" value="tanchiguo"/>  
   <permission name="readPhoneState"/>  
   <permission name="camera"/>  
   <permission name="record"/>  
@@ -28,10 +25,10 @@
   <permission name="internet"/>  
   <permission name="bootCompleted"/>  
   <permission name="hardware"/>  
-  <permission name="call"/>  
-  <access origin="*"/>  
-  <feature name="ajpush"> 
-    <param name="channel" value="developer-apicloud"/>  
-    <param name="app_key" value="c08ac56b590a916b500cb2fb"/> 
-  </feature> 
+  <feature name="wxPay"> 
+    <param name="urlScheme" value="wx1261cf5a3d69c6a5"/>  
+    <param name="apiKey" value="wx1261cf5a3d69c6a5"/>  
+    <param name="apiSecret" value="1be8bf987c405716e2025e2ea086e0af"/> 
+  </feature>  
+  <access origin="*"/> 
 </widget>
