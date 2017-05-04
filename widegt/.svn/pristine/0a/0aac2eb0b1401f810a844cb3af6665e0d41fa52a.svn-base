@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/aui/aui-win.css" />
+		<style type="text/css">
+			.aui-bar-1d9dd5 {
+				background: #4385f6;
+			}
+			.switch-bar {
+				position: relative;
+				display: inline-block;
+			}
+			.switch-bar span {
+				display: inline-block;
+				font-size: 13px;
+				border: 1px solid #fff;
+				width: 70px;
+				height: 25px;
+				line-height: 27px;
+				margin: 0;
+			}
+			.switch-bar span:first-child {
+				border-right: 0;
+				border-radius: 4px 0 0 4px;
+				-webkit-border-radius: 4px 0 0 4px;
+			}
+			.switch-bar span:last-child {
+				border-radius: 0 4px 4px 0;
+				-webkit-border-radius: 0 4px 4px 0;
+			}
+			.switch-bar span.active {
+				background: #fff;
+				color: #4385f6;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="aui-bar aui-bar-nav aui-bar-1d9dd5 header display-none" id='aui-header'>
+			<a class="aui-pull-left" onclick="H.$closeCurrentWin();"> <span class="aui-iconfont aui-icon-left"></span>返回 </a>
+			<div class="aui-title">
+				<div class="switch-bar">
+					<span class="active">我提问的</span><span>我解答的</span>
+				</div>
+			</div>
+			<a class="aui-pull-right" tapmode > <span class="aui-iconfont iconfont icon-tianjia2"></span> </a>
+		</header>
+	</body>
+	<script type="text/javascript" src="../../script/AHelper.js"></script>
+	<script type="text/javascript" src="../../script/zepto.min.js"></script>
+	<script type="text/javascript">
+		function setStyle(index) {
+			var that = $(".switch-bar span").eq(index);
+			that.addClass('active').siblings("span").removeClass("active");
+		}
+
+		Zepto(function($) {
+			$(".switch-bar").on("tap", "span", function() {
+				var index = $(this).index();
+				setStyle(index);
+				// 设置索引
+				H.$setFrameGroupIndex('groups', index);
+			});
+		});
+		H.ready(function() {
+			H.$openFrameGroupWithNav(function(ret, err) {
+				setStyle(ret.index);
+			}, 'aui-header', {
+				name : 'groups',
+				frames : [{
+					url : 'myQuestion_body.html',
+					name : 'myQuestion_body'
+				}, {
+					url : 'myAnswer_body.html',
+					name : 'myAnswer_body'
+				}]
+			});
+		});
+	</script>
+</html>
